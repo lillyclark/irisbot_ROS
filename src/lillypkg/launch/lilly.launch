@@ -1,0 +1,6 @@
+<launch>
+
+    <node pkg="lillypkg" name="talker" type="testpub.py"/>
+    <node pkg="lillypkg" name="listener" type="testsub.py"/>
+
+</launch>

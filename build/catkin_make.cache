@@ -1,0 +1,2 @@
+irisbot:lillypkg
+-DCATKIN_DEVEL_PREFIX=/home/lilly/Desktop/ROSws/devel -DCMAKE_INSTALL_PREFIX=/home/lilly/Desktop/ROSws/install -G Unix Makefiles
