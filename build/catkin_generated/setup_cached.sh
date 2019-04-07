@@ -7,4 +7,10 @@
 # new environment variables
 
 # modified environment variables
+export CMAKE_PREFIX_PATH="/home/lilly/Desktop/ROSws/devel:/opt/ros/kinetic"
+export LD_LIBRARY_PATH="/home/lilly/Desktop/ROSws/devel/lib:/opt/ros/kinetic/lib:/opt/ros/kinetic/lib/x86_64-linux-gnu"
+export PKG_CONFIG_PATH="/home/lilly/Desktop/ROSws/devel/lib/pkgconfig:/opt/ros/kinetic/lib/pkgconfig:/opt/ros/kinetic/lib/x86_64-linux-gnu/pkgconfig"
 export PWD="/home/lilly/Desktop/ROSws/build"
+export PYTHONPATH="/home/lilly/Desktop/ROSws/devel/lib/python3/dist-packages:$PYTHONPATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/lilly/Desktop/ROSws/devel/share/common-lisp"
+export ROS_PACKAGE_PATH="/home/lilly/Desktop/ROSws/src:/opt/ros/kinetic/share"
