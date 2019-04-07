@@ -32,13 +32,13 @@ class Movement():
 
     def rotate_CB(self, r):
         if not irl:
-            rospy.loginfo("rotating:", r.degrees, m.direction, m.speed)
+            rospy.loginfo("rotating: %d, %d, %d", r.degrees, r.direction, r.speed)
         else:
             self.m3pi.rotate_degrees(r.degrees, r.direction, r.speed)
 
     def drive_CB(self, d):
         if not irl:
-            rospy.loginfo("driving:", d.speed, d.distance)
+            rospy.loginfo("driving: %d, %d", d.speed, d.distance)
         else:
             self.m3pi.move_straight_distance(speed, distance)
 

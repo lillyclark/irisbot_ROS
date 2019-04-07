@@ -24,9 +24,9 @@ class Communication_Laptop():
                     break
                 cmd = eval(data.decode('utf-8'))
                 if cmd[0] == 'rotate' and len(cmd) == 4:
-                    self.rotate(degrees=cmd[1], direction=cmd[2], speed=cmd[3])
+                    self.rotate(degrees=int(cmd[1]), direction=int(cmd[2]), speed=int(cmd[3]))
                 elif cmd[0] == 'drive' and len(cmd) == 3:
-                    self.drive(speed=cmd[1], distance=cmd[2])
+                    self.drive(speed=int(cmd[1]), distance=int(cmd[2]))
                 else:
                     rospy.loginfo("Unknown command received from core.py")
                 connection.close()
