@@ -2,16 +2,25 @@
 
 import rospy
 from std_msgs.msg import Bool, String
-from irisbot.msg import Pose, MoveCmd
+from irisbot.msg import Pose, RotateCmd, DriveCmd
+
+try:
+    from m3pi import *
+    irl = True
+except RuntimeError:
+    print("Not running on RPi")
+    irl = False
 
 class Movement():
-    def __init__(self):
+    def __init__(self, m3pi):
         rospy.loginfo("starting movement")
         rospy.init_node('movement')
         self.role = None
         self.pose = Pose()
+        self.m3pi = m3pi
         self.sub_set_anchor = rospy.Subscriber('set_anchor', Pose, self.set_anchor_CB)
-        self.sub_move = rospy.Subscriber('move', MoveCmd, self.drive_CB)
+        self.sub_rotate = rospy.Subscriber('rotate', RotateCmd, self.rotate_CB)
+        self.sub_drive = rospy.Subscriber('drive', DriveCmd, self.drive_CB)
         rospy.spin()
 
     def set_anchor_CB(self, p):
@@ -21,12 +30,22 @@ class Movement():
         self.pose.y = p.y
         self.pose.orientation = p.orientation
 
-    def drive_CB(self, m):
-        if self.role == "anchor":
-            rospy.loginfo("ignoring drive command")
-            return
-        rospy.loginfo("driving!:%s, %s, %s", m.orientation, m.speed, m.distance)
-        # TODO write to m3pi
+    def rotate_CB(self, r):
+        if not irl:
+            rospy.loginfo("rotating:", r.degrees, m.direction, m.speed)
+        else:
+            self.m3pi.rotate_degrees(r.degrees, r.direction, r.speed)
+
+    def drive_CB(self, d):
+        if not irl:
+            rospy.loginfo("driving:", d.speed, d.distance)
+        else:
+            self.m3pi.move_straight_distance(speed, distance)
 
 if __name__ == '__main__':
-    movement = Movement()
+    if irl:
+        resetpin = 0000 # TODO
+        M3PI = m3pi(resetpin)
+    else:
+        M3PI = None
+    movement = Movement(M3PI)

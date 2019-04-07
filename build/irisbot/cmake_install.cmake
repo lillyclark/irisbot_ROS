@@ -35,7 +35,8 @@ endif()
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/irisbot/msg" TYPE FILE FILES
     "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg"
-    "/home/lilly/Desktop/ROSws/src/irisbot/msg/MoveCmd.msg"
+    "/home/lilly/Desktop/ROSws/src/irisbot/msg/RotateCmd.msg"
+    "/home/lilly/Desktop/ROSws/src/irisbot/msg/DriveCmd.msg"
     "/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg"
     "/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg"
     "/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeMsg.msg"

@@ -1,8 +1,8 @@
 (cl:defpackage irisbot-msg
   (:use )
   (:export
-   "<MOVECMD>"
-   "MOVECMD"
+   "<DRIVECMD>"
+   "DRIVECMD"
    "<NODE>"
    "NODE"
    "<NODELOC>"
@@ -11,5 +11,7 @@
    "NODEMSG"
    "<POSE>"
    "POSE"
+   "<ROTATECMD>"
+   "ROTATECMD"
   ))
 

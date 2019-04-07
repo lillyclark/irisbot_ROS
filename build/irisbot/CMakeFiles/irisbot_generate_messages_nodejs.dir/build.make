@@ -54,7 +54,8 @@ CMAKE_BINARY_DIR = /home/lilly/Desktop/ROSws/build
 include irisbot/CMakeFiles/irisbot_generate_messages_nodejs.dir/progress.make
 
 irisbot/CMakeFiles/irisbot_generate_messages_nodejs: /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/Pose.js
-irisbot/CMakeFiles/irisbot_generate_messages_nodejs: /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/MoveCmd.js
+irisbot/CMakeFiles/irisbot_generate_messages_nodejs: /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/RotateCmd.js
+irisbot/CMakeFiles/irisbot_generate_messages_nodejs: /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/DriveCmd.js
 irisbot/CMakeFiles/irisbot_generate_messages_nodejs: /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/Node.js
 irisbot/CMakeFiles/irisbot_generate_messages_nodejs: /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/NodeLoc.js
 irisbot/CMakeFiles/irisbot_generate_messages_nodejs: /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/NodeMsg.js
@@ -66,40 +67,46 @@ irisbot/CMakeFiles/irisbot_generate_messages_nodejs: /home/lilly/Desktop/ROSws/d
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lilly/Desktop/ROSws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from irisbot/Pose.msg"
 	cd /home/lilly/Desktop/ROSws/build/irisbot && ../catkin_generated/env_cached.sh /home/lilly/anaconda3/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg -Iirisbot:/home/lilly/Desktop/ROSws/src/irisbot/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p irisbot -o /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg
 
-/home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/MoveCmd.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/MoveCmd.js: /home/lilly/Desktop/ROSws/src/irisbot/msg/MoveCmd.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lilly/Desktop/ROSws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from irisbot/MoveCmd.msg"
-	cd /home/lilly/Desktop/ROSws/build/irisbot && ../catkin_generated/env_cached.sh /home/lilly/anaconda3/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lilly/Desktop/ROSws/src/irisbot/msg/MoveCmd.msg -Iirisbot:/home/lilly/Desktop/ROSws/src/irisbot/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p irisbot -o /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg
+/home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/RotateCmd.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/RotateCmd.js: /home/lilly/Desktop/ROSws/src/irisbot/msg/RotateCmd.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lilly/Desktop/ROSws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from irisbot/RotateCmd.msg"
+	cd /home/lilly/Desktop/ROSws/build/irisbot && ../catkin_generated/env_cached.sh /home/lilly/anaconda3/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lilly/Desktop/ROSws/src/irisbot/msg/RotateCmd.msg -Iirisbot:/home/lilly/Desktop/ROSws/src/irisbot/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p irisbot -o /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg
+
+/home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/DriveCmd.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/DriveCmd.js: /home/lilly/Desktop/ROSws/src/irisbot/msg/DriveCmd.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lilly/Desktop/ROSws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from irisbot/DriveCmd.msg"
+	cd /home/lilly/Desktop/ROSws/build/irisbot && ../catkin_generated/env_cached.sh /home/lilly/anaconda3/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lilly/Desktop/ROSws/src/irisbot/msg/DriveCmd.msg -Iirisbot:/home/lilly/Desktop/ROSws/src/irisbot/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p irisbot -o /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg
 
 /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/Node.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/Node.js: /home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lilly/Desktop/ROSws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from irisbot/Node.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lilly/Desktop/ROSws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from irisbot/Node.msg"
 	cd /home/lilly/Desktop/ROSws/build/irisbot && ../catkin_generated/env_cached.sh /home/lilly/anaconda3/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg -Iirisbot:/home/lilly/Desktop/ROSws/src/irisbot/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p irisbot -o /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg
 
 /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/NodeLoc.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/NodeLoc.js: /home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg
-/home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/NodeLoc.js: /home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg
 /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/NodeLoc.js: /home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lilly/Desktop/ROSws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from irisbot/NodeLoc.msg"
+/home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/NodeLoc.js: /home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lilly/Desktop/ROSws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Javascript code from irisbot/NodeLoc.msg"
 	cd /home/lilly/Desktop/ROSws/build/irisbot && ../catkin_generated/env_cached.sh /home/lilly/anaconda3/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg -Iirisbot:/home/lilly/Desktop/ROSws/src/irisbot/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p irisbot -o /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg
 
 /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/NodeMsg.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/NodeMsg.js: /home/lilly/Desktop/ROSws/src/irisbot/msg/NodeMsg.msg
 /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/NodeMsg.js: /home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lilly/Desktop/ROSws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Javascript code from irisbot/NodeMsg.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lilly/Desktop/ROSws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Javascript code from irisbot/NodeMsg.msg"
 	cd /home/lilly/Desktop/ROSws/build/irisbot && ../catkin_generated/env_cached.sh /home/lilly/anaconda3/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lilly/Desktop/ROSws/src/irisbot/msg/NodeMsg.msg -Iirisbot:/home/lilly/Desktop/ROSws/src/irisbot/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p irisbot -o /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg
 
 /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/srv/GetAnchor.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/srv/GetAnchor.js: /home/lilly/Desktop/ROSws/src/irisbot/srv/GetAnchor.srv
-/home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/srv/GetAnchor.js: /home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg
 /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/srv/GetAnchor.js: /home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg
 /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/srv/GetAnchor.js: /home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lilly/Desktop/ROSws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Javascript code from irisbot/GetAnchor.srv"
+/home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/srv/GetAnchor.js: /home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lilly/Desktop/ROSws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Javascript code from irisbot/GetAnchor.srv"
 	cd /home/lilly/Desktop/ROSws/build/irisbot && ../catkin_generated/env_cached.sh /home/lilly/anaconda3/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/lilly/Desktop/ROSws/src/irisbot/srv/GetAnchor.srv -Iirisbot:/home/lilly/Desktop/ROSws/src/irisbot/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p irisbot -o /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/srv
 
 irisbot_generate_messages_nodejs: irisbot/CMakeFiles/irisbot_generate_messages_nodejs
 irisbot_generate_messages_nodejs: /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/Pose.js
-irisbot_generate_messages_nodejs: /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/MoveCmd.js
+irisbot_generate_messages_nodejs: /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/RotateCmd.js
+irisbot_generate_messages_nodejs: /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/DriveCmd.js
 irisbot_generate_messages_nodejs: /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/Node.js
 irisbot_generate_messages_nodejs: /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/NodeLoc.js
 irisbot_generate_messages_nodejs: /home/lilly/Desktop/ROSws/devel/share/gennodejs/ros/irisbot/msg/NodeMsg.js

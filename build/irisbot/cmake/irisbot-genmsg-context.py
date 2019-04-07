@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/MoveCmd.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeMsg.msg"
+messages_str = "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/RotateCmd.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/DriveCmd.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeMsg.msg"
 services_str = "/home/lilly/Desktop/ROSws/src/irisbot/srv/GetAnchor.srv"
 pkg_name = "irisbot"
 dependencies_str = "std_msgs"

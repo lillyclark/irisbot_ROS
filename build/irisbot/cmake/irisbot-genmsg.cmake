@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "irisbot: 5 messages, 1 services")
+message(STATUS "irisbot: 6 messages, 1 services")
 
 set(MSG_I_FLAGS "-Iirisbot:/home/lilly/Desktop/ROSws/src/irisbot/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
@@ -22,9 +22,14 @@ add_custom_target(_irisbot_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "irisbot" "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg" ""
 )
 
-get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/MoveCmd.msg" NAME_WE)
+get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/RotateCmd.msg" NAME_WE)
 add_custom_target(_irisbot_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "irisbot" "/home/lilly/Desktop/ROSws/src/irisbot/msg/MoveCmd.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "irisbot" "/home/lilly/Desktop/ROSws/src/irisbot/msg/RotateCmd.msg" ""
+)
+
+get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/DriveCmd.msg" NAME_WE)
+add_custom_target(_irisbot_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "irisbot" "/home/lilly/Desktop/ROSws/src/irisbot/msg/DriveCmd.msg" ""
 )
 
 get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg" NAME_WE)
@@ -34,7 +39,7 @@ add_custom_target(_irisbot_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg" NAME_WE)
 add_custom_target(_irisbot_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "irisbot" "/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg" "irisbot/Pose:irisbot/Node"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "irisbot" "/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg" "irisbot/Node:irisbot/Pose"
 )
 
 get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeMsg.msg" NAME_WE)
@@ -44,7 +49,7 @@ add_custom_target(_irisbot_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/srv/GetAnchor.srv" NAME_WE)
 add_custom_target(_irisbot_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "irisbot" "/home/lilly/Desktop/ROSws/src/irisbot/srv/GetAnchor.srv" "irisbot/Pose:irisbot/NodeLoc:irisbot/Node"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "irisbot" "/home/lilly/Desktop/ROSws/src/irisbot/srv/GetAnchor.srv" "irisbot/NodeLoc:irisbot/Node:irisbot/Pose"
 )
 
 #
@@ -60,7 +65,13 @@ _generate_msg_cpp(irisbot
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/irisbot
 )
 _generate_msg_cpp(irisbot
-  "/home/lilly/Desktop/ROSws/src/irisbot/msg/MoveCmd.msg"
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/RotateCmd.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/irisbot
+)
+_generate_msg_cpp(irisbot
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/DriveCmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/irisbot
@@ -74,7 +85,7 @@ _generate_msg_cpp(irisbot
 _generate_msg_cpp(irisbot
   "/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg"
   "${MSG_I_FLAGS}"
-  "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg"
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/irisbot
 )
 _generate_msg_cpp(irisbot
@@ -88,7 +99,7 @@ _generate_msg_cpp(irisbot
 _generate_srv_cpp(irisbot
   "/home/lilly/Desktop/ROSws/src/irisbot/srv/GetAnchor.srv"
   "${MSG_I_FLAGS}"
-  "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg"
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/irisbot
 )
 
@@ -106,7 +117,9 @@ add_dependencies(irisbot_generate_messages irisbot_generate_messages_cpp)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg" NAME_WE)
 add_dependencies(irisbot_generate_messages_cpp _irisbot_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/MoveCmd.msg" NAME_WE)
+get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/RotateCmd.msg" NAME_WE)
+add_dependencies(irisbot_generate_messages_cpp _irisbot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/DriveCmd.msg" NAME_WE)
 add_dependencies(irisbot_generate_messages_cpp _irisbot_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg" NAME_WE)
 add_dependencies(irisbot_generate_messages_cpp _irisbot_generate_messages_check_deps_${_filename})
@@ -133,7 +146,13 @@ _generate_msg_eus(irisbot
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/irisbot
 )
 _generate_msg_eus(irisbot
-  "/home/lilly/Desktop/ROSws/src/irisbot/msg/MoveCmd.msg"
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/RotateCmd.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/irisbot
+)
+_generate_msg_eus(irisbot
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/DriveCmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/irisbot
@@ -147,7 +166,7 @@ _generate_msg_eus(irisbot
 _generate_msg_eus(irisbot
   "/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg"
   "${MSG_I_FLAGS}"
-  "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg"
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/irisbot
 )
 _generate_msg_eus(irisbot
@@ -161,7 +180,7 @@ _generate_msg_eus(irisbot
 _generate_srv_eus(irisbot
   "/home/lilly/Desktop/ROSws/src/irisbot/srv/GetAnchor.srv"
   "${MSG_I_FLAGS}"
-  "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg"
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/irisbot
 )
 
@@ -179,7 +198,9 @@ add_dependencies(irisbot_generate_messages irisbot_generate_messages_eus)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg" NAME_WE)
 add_dependencies(irisbot_generate_messages_eus _irisbot_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/MoveCmd.msg" NAME_WE)
+get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/RotateCmd.msg" NAME_WE)
+add_dependencies(irisbot_generate_messages_eus _irisbot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/DriveCmd.msg" NAME_WE)
 add_dependencies(irisbot_generate_messages_eus _irisbot_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg" NAME_WE)
 add_dependencies(irisbot_generate_messages_eus _irisbot_generate_messages_check_deps_${_filename})
@@ -206,7 +227,13 @@ _generate_msg_lisp(irisbot
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/irisbot
 )
 _generate_msg_lisp(irisbot
-  "/home/lilly/Desktop/ROSws/src/irisbot/msg/MoveCmd.msg"
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/RotateCmd.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/irisbot
+)
+_generate_msg_lisp(irisbot
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/DriveCmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/irisbot
@@ -220,7 +247,7 @@ _generate_msg_lisp(irisbot
 _generate_msg_lisp(irisbot
   "/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg"
   "${MSG_I_FLAGS}"
-  "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg"
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/irisbot
 )
 _generate_msg_lisp(irisbot
@@ -234,7 +261,7 @@ _generate_msg_lisp(irisbot
 _generate_srv_lisp(irisbot
   "/home/lilly/Desktop/ROSws/src/irisbot/srv/GetAnchor.srv"
   "${MSG_I_FLAGS}"
-  "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg"
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/irisbot
 )
 
@@ -252,7 +279,9 @@ add_dependencies(irisbot_generate_messages irisbot_generate_messages_lisp)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg" NAME_WE)
 add_dependencies(irisbot_generate_messages_lisp _irisbot_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/MoveCmd.msg" NAME_WE)
+get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/RotateCmd.msg" NAME_WE)
+add_dependencies(irisbot_generate_messages_lisp _irisbot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/DriveCmd.msg" NAME_WE)
 add_dependencies(irisbot_generate_messages_lisp _irisbot_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg" NAME_WE)
 add_dependencies(irisbot_generate_messages_lisp _irisbot_generate_messages_check_deps_${_filename})
@@ -279,7 +308,13 @@ _generate_msg_nodejs(irisbot
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/irisbot
 )
 _generate_msg_nodejs(irisbot
-  "/home/lilly/Desktop/ROSws/src/irisbot/msg/MoveCmd.msg"
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/RotateCmd.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/irisbot
+)
+_generate_msg_nodejs(irisbot
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/DriveCmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/irisbot
@@ -293,7 +328,7 @@ _generate_msg_nodejs(irisbot
 _generate_msg_nodejs(irisbot
   "/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg"
   "${MSG_I_FLAGS}"
-  "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg"
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/irisbot
 )
 _generate_msg_nodejs(irisbot
@@ -307,7 +342,7 @@ _generate_msg_nodejs(irisbot
 _generate_srv_nodejs(irisbot
   "/home/lilly/Desktop/ROSws/src/irisbot/srv/GetAnchor.srv"
   "${MSG_I_FLAGS}"
-  "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg"
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/irisbot
 )
 
@@ -325,7 +360,9 @@ add_dependencies(irisbot_generate_messages irisbot_generate_messages_nodejs)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg" NAME_WE)
 add_dependencies(irisbot_generate_messages_nodejs _irisbot_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/MoveCmd.msg" NAME_WE)
+get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/RotateCmd.msg" NAME_WE)
+add_dependencies(irisbot_generate_messages_nodejs _irisbot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/DriveCmd.msg" NAME_WE)
 add_dependencies(irisbot_generate_messages_nodejs _irisbot_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg" NAME_WE)
 add_dependencies(irisbot_generate_messages_nodejs _irisbot_generate_messages_check_deps_${_filename})
@@ -352,7 +389,13 @@ _generate_msg_py(irisbot
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/irisbot
 )
 _generate_msg_py(irisbot
-  "/home/lilly/Desktop/ROSws/src/irisbot/msg/MoveCmd.msg"
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/RotateCmd.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/irisbot
+)
+_generate_msg_py(irisbot
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/DriveCmd.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/irisbot
@@ -366,7 +409,7 @@ _generate_msg_py(irisbot
 _generate_msg_py(irisbot
   "/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg"
   "${MSG_I_FLAGS}"
-  "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg"
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/irisbot
 )
 _generate_msg_py(irisbot
@@ -380,7 +423,7 @@ _generate_msg_py(irisbot
 _generate_srv_py(irisbot
   "/home/lilly/Desktop/ROSws/src/irisbot/srv/GetAnchor.srv"
   "${MSG_I_FLAGS}"
-  "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg"
+  "/home/lilly/Desktop/ROSws/src/irisbot/msg/NodeLoc.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg;/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/irisbot
 )
 
@@ -398,7 +441,9 @@ add_dependencies(irisbot_generate_messages irisbot_generate_messages_py)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/Pose.msg" NAME_WE)
 add_dependencies(irisbot_generate_messages_py _irisbot_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/MoveCmd.msg" NAME_WE)
+get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/RotateCmd.msg" NAME_WE)
+add_dependencies(irisbot_generate_messages_py _irisbot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/DriveCmd.msg" NAME_WE)
 add_dependencies(irisbot_generate_messages_py _irisbot_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/lilly/Desktop/ROSws/src/irisbot/msg/Node.msg" NAME_WE)
 add_dependencies(irisbot_generate_messages_py _irisbot_generate_messages_check_deps_${_filename})

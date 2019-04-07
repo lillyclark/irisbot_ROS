@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/irisbot_generate_messages_eus"
   "/home/lilly/Desktop/ROSws/devel/share/roseus/ros/irisbot/msg/Pose.l"
-  "/home/lilly/Desktop/ROSws/devel/share/roseus/ros/irisbot/msg/MoveCmd.l"
+  "/home/lilly/Desktop/ROSws/devel/share/roseus/ros/irisbot/msg/RotateCmd.l"
+  "/home/lilly/Desktop/ROSws/devel/share/roseus/ros/irisbot/msg/DriveCmd.l"
   "/home/lilly/Desktop/ROSws/devel/share/roseus/ros/irisbot/msg/Node.l"
   "/home/lilly/Desktop/ROSws/devel/share/roseus/ros/irisbot/msg/NodeLoc.l"
   "/home/lilly/Desktop/ROSws/devel/share/roseus/ros/irisbot/msg/NodeMsg.l"

@@ -3,37 +3,50 @@
 import rospy
 import socket
 from std_msgs.msg import Bool, String
-from irisbot.msg import Pose, MoveCmd
+from irisbot.msg import Pose, RotateCmd, DriveCmd
 
 class Communication_Laptop():
     def __init__(self):
         rospy.loginfo("starting communication_laptop")
-        rospy.init_node('communication_laptop')
-        self.pub_move = rospy.Publisher('move', MoveCmd, queue_size=10)
+        rospy.init_node('communication_laptop', disable_signals=True)
+        self.pub_rotate = rospy.Publisher('rotate', RotateCmd, queue_size=10)
+        self.pub_drive = rospy.Publisher('drive', DriveCmd, queue_size=10)
         s = self.create_server_socket()
 
-        while not rospy.core.is_shutdown():
+        while not rospy.is_shutdown():
+            connection = None
+            try:
                 rospy.loginfo("listening for TCP data")
-                (connection, address) = s.accept()
+                connection, address = s.accept()
                 rospy.loginfo("received TCP data")
-                try:
-                    data = connection.recv(20)
-                    if data == b'k':
-                        connection.close()
-                        rospy.signal_shutdown("User killed communication_laptop node")
-                    else:
-                        orientation, speed, distance = eval(data.decode('utf-8'))
-                        self.drive(orientation, speed, distance)
-                finally:
+                data = connection.recv(64)
+                if not data:
+                    break
+                cmd = eval(data.decode('utf-8'))
+                if cmd[0] == 'rotate' and len(cmd) == 4:
+                    self.rotate(degrees=cmd[1], direction=cmd[2], speed=cmd[3])
+                elif cmd[0] == 'drive' and len(cmd) == 3:
+                    self.drive(speed=cmd[1], distance=cmd[2])
+                else:
+                    rospy.loginfo("Unknown command received from core.py")
+                connection.close()
+            except KeyboardInterrupt:
+                if connection:
                     connection.close()
+                rospy.signal_shutdown("User killed communication_laptop node")
+                break
 
-    def drive(self, orientation, speed, distance):
+    def drive(self, speed, distance):
         rospy.loginfo("sending drive cmd")
-        m = MoveCmd()
-        m.orientation = orientation
-        m.speed = speed
-        m.distance = distance
-        self.pub_move.publish(m)
+        d = DriveCmd()
+        d.speed, d.distance = speed, distance
+        self.pub_drive.publish(d)
+
+    def rotate(self, degrees, direction, speed):
+        rospy.loginfo("sending rotate cmd")
+        r = RotateCmd()
+        r.degrees, r.direction, r.speed = degrees, direction, speed
+        self.pub_rotate.publish(r)
 
     def create_server_socket(self):
         rospy.loginfo("creating TCP server socket")

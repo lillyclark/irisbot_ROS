@@ -51,7 +51,8 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
   FILES
   Pose.msg
-  MoveCmd.msg
+  RotateCmd.msg
+  DriveCmd.msg
   Node.msg
   NodeLoc.msg
   NodeMsg.msg

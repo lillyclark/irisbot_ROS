@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/irisbot_generate_messages_py"
   "/home/lilly/Desktop/ROSws/devel/lib/python3/dist-packages/irisbot/msg/_Pose.py"
-  "/home/lilly/Desktop/ROSws/devel/lib/python3/dist-packages/irisbot/msg/_MoveCmd.py"
+  "/home/lilly/Desktop/ROSws/devel/lib/python3/dist-packages/irisbot/msg/_RotateCmd.py"
+  "/home/lilly/Desktop/ROSws/devel/lib/python3/dist-packages/irisbot/msg/_DriveCmd.py"
   "/home/lilly/Desktop/ROSws/devel/lib/python3/dist-packages/irisbot/msg/_Node.py"
   "/home/lilly/Desktop/ROSws/devel/lib/python3/dist-packages/irisbot/msg/_NodeLoc.py"
   "/home/lilly/Desktop/ROSws/devel/lib/python3/dist-packages/irisbot/msg/_NodeMsg.py"
